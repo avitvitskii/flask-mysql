@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Students</title>
+
+{#    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">#}
+</head>
+<body>
+    <div class="container">
+
+    {% for row in rows %}
+        <div class="post">
+            <span>{{ row.id }}</span>
+            <span>{{ row.name }}</span>
+            <span>{{ row.created_at }}</span>
+        </div>
+    {% endfor %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: .
+    links:
+      - db
+    ports:
+    - 5000:5000
+    volumes:
+      - .:/app
+
+  db:
+    image: mysql:5.7
+    env_file:
+      - ./docker/db/.env
+    ports:
+      - 3315:3306
+    volumes:
+      - ./db/storage:/var/lib/mysql
+    restart: always
